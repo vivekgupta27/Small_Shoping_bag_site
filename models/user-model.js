@@ -16,20 +16,17 @@ const UserSchema=mongoose.Schema({
         type:String,
         required:true,
     },
-    cart:{
-        type:Array,
-        default:[]
-    },
+    cart:[{
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"product"
+    }],
     isadmin:{
         type:Boolean,
         default:false,
     },
     orders:{
-        type:Array,
-        default:[]
-    },
-    contact:{
-        type:Number,
+        type:mongoose.Schema.Types.ObjectId,
+        ref:"product"
     },
 })
 
